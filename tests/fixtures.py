@@ -1,6 +1,9 @@
 import pytest
 import json
-from cStringIO import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 from ijson_filter.cli import do_filter
 
 
