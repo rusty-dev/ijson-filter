@@ -6,6 +6,15 @@ Loading, filtering and output is performed without loading the whole file into m
 
 Build Status: [![Build Status](https://travis-ci.org/rusty-dev/ijson-filter.svg)](https://travis-ci.org/rusty-dev/ijson-filter)
 
+#### Installation:
+
+```bash
+pip install ijson-filter
+```
+
+**ijson** is using **YAJL2** library for fast parsing, so it's highly recommended that you install it as well.
+It will still work without **YAJL2**, but significantly slower.
+
 #### Usage:
 ```
 Usage: ijson-filter [OPTIONS] [INPUT]
