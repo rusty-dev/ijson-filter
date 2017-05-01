@@ -38,18 +38,19 @@ Options:
 ```json
 {
 	"name": "Primary data set #1",
-    "table": {
-    	"description": "Users",
-        "rows": [
-        	{ "name": "User1", ... },
-            ...
-        ]
-    }
+  "table": {
+  	"description": "Users",
+    "rows": [
+    	{ "name": "User1", ... },
+        ...
+    ]
+  }
 }
 ```
 
 
 * Limit the number of items in __rows__ field to 50 last items, of *data.json* file and output to __STDOUT__:
+
 ```bash
 $ ijson-filter -f "table.rows=-50" input.json
 ```
@@ -61,6 +62,7 @@ $ ijson-filter -f 'table~[^\d]+' data.json -o filtered.json
 ```
 
 * Filter output from unix commands and chain it to other commands *(limit array to first 3 objects)*:
+
 ```bash
 $ echo '[1,2,3,4,5]' | ijson-filter -f 3 | python -m json.tool
 [
@@ -68,4 +70,10 @@ $ echo '[1,2,3,4,5]' | ijson-filter -f 3 | python -m json.tool
     2,
     3
 ]
+```
+
+* It's possible to use multiple filters at once by specifying `--filter` parameter multiple times:
+
+```bash
+$ ijson-filter -f 'table~rows' -f 'table.rows=5' data.json > filtered.json
 ```
