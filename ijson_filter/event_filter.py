@@ -1,6 +1,12 @@
 from itertools import count, chain
 import collections
 
+# python2-3 compatible xrange
+try:
+    xrange
+except NameError:
+    xrange = range
+
 
 class ContainerEnd(Exception):
     """Raised when item consumption reaches the end of a container."""
