@@ -1,8 +1,17 @@
 language: python
 python:
-  - "2.7"
-  - "3.5"
+  - '2.7'
+  - '3.5'
+before_install:
+  - pip install pytest
 install:
-  - pip install -U . pytest
+  - pip install .
 script:
   - py.test tests -vv
+deploy:
+  provider: pypi
+  user: rusty-dev
+  password:
+    secure: NID8U3P6aGNKmYjNEtgoK+ks+oRVdOwXYFXMOfuKg1UweFbS2U5vmr8nz9s1PFzP/yTF36ThoN7JP5XzLT3jfo5s4ZhzDr52xggztqivZtuRxpY3DdyXKwSRj8moeDgJZ3QYGQoxXTcyHJr5K47Iu9pBiiMZMLQLE10uPeip3zVEMlBKXr08lymQtEHU8uNSj88FFsj3+GftHwsOSusdx+X7FDkSgqHIv5bQGBvF8Qf0ME3F8VX47jbNgGDMwhiBQE3vr8f8Vpg9t9S+fGqk0cX7ZIdJvFMar3RF64k3ag4tj/2+qrOqdj3r8F487Hub8kjYRGHfzgSl3/RnZzfC6IsI4s5PMdmsiCXu6FYo7i/kz0iREgZtBbUgCGmzt3QxNplmISKag6711OSzY3zjdZ/Cj4lGB+qzwFFOQYzVthz9kBCu0W9AKYTAOg+XNRZ9e8PgL/DoxEvZrHFD+R+5NzxEMZeQTdbwsIkZbik3nmweB9r3q0/FruC5CaXYVViqxuw6bXAoYmJ15TKMi2a8D/A5yP64mZHmsdELWffkpy29itZIFlsiACts12cc3EAlOroK86YUcKwKWeSktCb24viILMRicGGcd3kJJ1VOWdKJ61/fXE+IOi0tz4imKRgXlqxKjfgqNhQEyblD1zlQ+aPrd/DVIdMmWQ6mI5dppM0=
+  on:
+    tags: true
