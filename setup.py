@@ -12,6 +12,7 @@ setup(
     version='1.0',
     description="Iterative JSON filter.",
     author="https://github.com/rusty-dev",
+    author_email="rustykoc@gmail.com",
     url='https://github.com/rusty-dev/ijson-filter',
     packages=['ijson_filter'],
     include_package_data=True,
@@ -22,11 +23,11 @@ setup(
     ],
     scripts=['ijson_filter/ijson-filter'],
     classifiers=[
-        'Development Status :: 4 - Beta'
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7'
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
     ]
 )
